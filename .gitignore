@@ -1,0 +1,20 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+# Ham tarama çıktıları ve hassas raporlar repoya eklenmez
+*.pcap
+scan-output/
