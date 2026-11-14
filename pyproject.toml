@@ -1,0 +1,16 @@
+[project]
+name = "kalkan-security"
+version = "0.1.0"
+description = "Kalkan siber güvenlik: kurallar, araç mantığı, bilgi tabanı ve test betikleri"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
