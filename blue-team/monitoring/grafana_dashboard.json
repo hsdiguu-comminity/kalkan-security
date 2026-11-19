@@ -1,0 +1,23 @@
+{
+  "title": "Kalkan - Blue Team Güvenlik İzleme Panosu",
+  "uid": "kalkan-sec-dashboard",
+  "tags": ["security", "blue-team", "kalkan"],
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {
+      "id": 1,
+      "title": "Yetkisiz Erişim & WAF Blokları (HTTP 401 / 403)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [{ "expr": "sum(rate(http_requests_total{status=~\"401|403\"}[1m])) by (status)", "refId": "A" }]
+    },
+    {
+      "id": 2,
+      "title": "Sunucu CPU Kullanımı (DDoS Anomali Takibi)",
+      "type": "gauge",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [{ "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[2m])) * 100)", "refId": "A" }]
+    }
+  ]
+}

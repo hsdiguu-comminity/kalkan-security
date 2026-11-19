@@ -1,0 +1,23 @@
+apiVersion: 1
+groups:
+  - orgId: 1
+    name: kalkan_security_alerts
+    folder: Security
+    interval: 1m
+    rules:
+      - uid: brute_force_detection
+        title: Yuksek Oranda 401/403 Hatasi (Brute-Force Suphesi)
+        condition: C
+        for: 1m
+        annotations:
+          summary: "Olasi Brute-Force veya Dizin Tarama Saldirisi"
+        labels:
+          severity: critical
+      - uid: high_cpu_ddos_alert
+        title: Kritik CPU Kullanimi (Olasi DDoS)
+        condition: C
+        for: 5m
+        annotations:
+          summary: "Sunucu CPU kullanimi %90 uzerine cikti"
+        labels:
+          severity: warning
